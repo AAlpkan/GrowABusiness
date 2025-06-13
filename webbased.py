@@ -22,7 +22,7 @@ DATA = {
     'Club':             {'Normal':10000.00,'Gold':15000.00,'Rainbow':20000.00,'Inferno':30000.00,'Oblivion':40000.00,'Celestial':50000.00},
     'Airport':          {'Normal':48000.00,'Gold':72000.00,'Rainbow':96000.00,'Inferno':144000.00,'Oblivion':192000.00,'Celestial':240000.00},
     'Eggtrader':        {'Normal':85.00, 'Gold':127.50,'Rainbow':170.00,'Inferno':255.00,'Oblivion':340.00,  'Celestial':425.00},
-    'Crystalcaver':     {'Normal':3833.33,'Gold':5750.00,'Rainbow':7666.67,'Inferno':11500.00,'Oblivion':15333.33,'Celestial':19166.67},
+    'Crystalcarver':     {'Normal':3833.33,'Gold':5750.00,'Rainbow':7666.67,'Inferno':11500.00,'Oblivion':15333.33,'Celestial':19166.67},
     'Dragon':           {'Normal':48333.33,'Gold':72500.00,'Rainbow':96666.67,'Inferno':145000.00,'Oblivion':193333.33,'Celestial':241666.67},
     'Astronaut':        {'Normal':125.00,'Gold':187.50,'Rainbow':250.00,'Inferno':375.00,'Oblivion':500.00,  'Celestial':625.00},
     'Aliengardener':    {'Normal':180.00,'Gold':270.00,'Rainbow':360.00,'Inferno':540.00,'Oblivion':720.00,  'Celestial':900.00},
@@ -84,7 +84,10 @@ if st.session_state.buildings:
         with col2:
             if st.button("❌ Remove", key=f"remove_{i}"):
                 st.session_state.buildings.pop(i)
-                st.experimental_rerun()
+                st.rerun()
+    if st.button("🗑️ Clear All Buildings"):
+        st.session_state.buildings.clear()
+        st.rerun()
 else:
     st.info("No buildings added yet.")
 
